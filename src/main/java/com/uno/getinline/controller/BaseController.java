@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BaseController {
 
     @GetMapping("/")
-    public String root() throws Exception {
+    public String root() {
 //        throw new Exception("테스트");
-        throw new GeneralException("테스트");
-//        return "index";
+//        throw new GeneralException("테스트");
+        return "index";
     }
 
 }
