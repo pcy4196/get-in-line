@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @Controller
-public class BasicErrorController implements ErrorController {
+public class BaseErrorController implements ErrorController {
 
     // implements ErrorController Error 피에지 컨트롤 하기 위해 ErrorController inerface 구현 필요
     @RequestMapping(path = "/error", produces = MediaType.TEXT_HTML_VALUE)

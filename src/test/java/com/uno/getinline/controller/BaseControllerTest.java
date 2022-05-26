@@ -3,8 +3,7 @@ package com.uno.getinline.controller;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -13,12 +12,20 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@AutoConfigureMockMvc // MockMvc 자동 설정
-@SpringBootTest
+//@AutoConfigureMockMvc // MockMvc 자동 설정
+//@SpringBootTest
+@WebMvcTest(BaseController.class)
 class BaseControllerTest {
 
+//    @Autowired
+//    private MockMvc mvc;
+
+    private final MockMvc mvc;
+
     @Autowired
-    private MockMvc mvc;
+    public BaseControllerTest(MockMvc mvc) {
+        this.mvc = mvc;
+    }
 
     @DisplayName("[view][GET] index(기본) 페이지 요청")
     @Test
