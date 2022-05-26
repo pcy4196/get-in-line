@@ -2,17 +2,13 @@ package com.uno.getinline.dto;
 
 import com.uno.getinline.constant.PlaceType;
 
-import java.time.LocalDateTime;
-
 public record PlaceDTO(
         PlaceType placeType,
         String placeName,
         String address,
         String phoneNumber,
         Integer capacity,
-        String memo,
-        LocalDateTime createdAt,
-        LocalDateTime modifiedAt
+        String memo
 ) {
     public static PlaceDTO of(
             PlaceType placeType,
@@ -20,10 +16,8 @@ public record PlaceDTO(
             String address,
             String phoneNumber,
             Integer capacity,
-            String memo,
-            LocalDateTime createdAt,
-            LocalDateTime modifiedAt
+            String memo
     ) {
-        return new PlaceDTO(placeType, placeName, address, phoneNumber, capacity, memo, createdAt, modifiedAt);
+        return new PlaceDTO(placeType, placeName, address, phoneNumber, capacity, memo);
     }
 }

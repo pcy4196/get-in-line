@@ -42,9 +42,7 @@ public class AdminController {
                 "서울시 강남구 강남대로 1234",
                 "010-1234-5678",
                 30,
-                "신장개업",
-                LocalDateTime.now(),
-                LocalDateTime.now()
+                "신장개업"
         ));
 
         return new ModelAndView("admin/place-detail", map);
