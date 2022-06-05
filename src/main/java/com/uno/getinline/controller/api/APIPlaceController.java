@@ -12,8 +12,10 @@ import java.util.List;
 @RestController
 public class APIPlaceController {
 
+    // TDD 스타일 연습 - 2022.06.06
     @GetMapping("/places")
     public APIDataResponse<List<PlaceResponse>> getPlaces() {
+//        return APIDataResponse.empty();
         return APIDataResponse.of(List.of(PlaceResponse.of(
                 PlaceType.COMMON,
                 "랄라배드민턴장",
@@ -23,6 +25,18 @@ public class APIPlaceController {
                 "신장개업"
         )));
     }
+
+//    @GetMapping("/places")
+//    public APIDataResponse<List<PlaceResponse>> getPlaces() {
+//        return APIDataResponse.of(List.of(PlaceResponse.of(
+//                PlaceType.COMMON,
+//                "랄라배드민턴장",
+//                "서울시 강남구 강남대로 1234",
+//                "010-1234-5678",
+//                30,
+//                "신장개업"
+//        )));
+//    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/places")
